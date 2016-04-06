@@ -1,21 +1,24 @@
-#!/usr/bin/env node
-
-exports.count = function(start, end) {
-	var output = start;
-	for(var i = start; i < end; i++)
-	{
-		output += " " + exports.fizzbuzz(i+1);
+// #!/usr/bin/env node
+var count, fizzbuzz; 
+count = function(start, end) {
+	var output = fizzbuzz(start);
+	for(var i = start; i < end; i++) {
+		output += " " + fizzbuzz(i+1);
 	}
 	return output;
 }
-exports.fizzbuzz = function(num) {
-	if(num % 3 == 0 && num % 5 == 0)
+fizzbuzz = function(num) {
+	if(0 == num % 15)
 		return "fizzbuzz";
-	else if(num % 3 == 0)
+	else if(0 == num % 3)
 		return "fizz";
-	else if(num % 5 == 0)
+	else if(0 == num % 5)
 		return "buzz";
 	else
 		return num;
 }
 
+ module.exports = {
+ 	count: count,
+ 	fizzbuzz: fizzbuzz
+ }

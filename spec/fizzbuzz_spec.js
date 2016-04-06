@@ -1,9 +1,9 @@
 var fb = require("../fizzbuzz");
 
 describe("a fizzbuzz program", function() {	
-	// it("can count 1 to 5", function() {
-	// 	expect(fb.count(1, 5)).toBe("1 2 3 4 5");
-	// });
+	it("can count 1 to 5", function() {
+		expect(fb.count(1, 5)).toBe("1 2 fizz 4 buzz");
+	});
 	it("can say fizz", function() {
 		expect(fb.fizzbuzz(3)).toBe("fizz");
 	});
@@ -24,4 +24,9 @@ describe("a fizzbuzz program", function() {
 			"7 8 fizz buzz 11 fizz "+
 			"13 14 fizzbuzz 16 17 fizz 19 buzz");
 	});
+	it("can do fizzbuzz from 10-15", function() {
+		expect(fb.count(10, 15))
+		.toBe("buzz 11 fizz 13 14 fizzbuzz");
+	});
+
 });
